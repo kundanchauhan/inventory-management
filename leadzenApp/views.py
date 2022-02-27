@@ -57,7 +57,7 @@ def view_customer(request):
     print(customer_obj)
     context={'customer_obj':customer_obj}
     for i in customer_obj:
-        print(i.id)
+        print("id",i.id)
     return render(request,'view_customer.html',context)
 
 

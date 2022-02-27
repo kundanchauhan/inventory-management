@@ -1,0 +1,79 @@
+.card{
+    border: 2px solid #CCCCCC;
+    border-radius: 20px;
+    opacity: 1;
+    margin-top:40px;
+    padding:30px;
+    padding-bottom:10px;
+}
+
+.thd{
+    background: #EFF3FA 0% 0% no-repeat padding-box !important;
+    opacity: 1;
+
+}
+
+
+
+th{
+    text-align: left;
+    font: normal normal 700 14px/17px Open Sans;
+    letter-spacing: 0px;
+    color: #353535;
+    opacity: 1;
+    border-bottom:none !important;
+    padding:15px !important;
+    text-align:center !important;
+
+}
+
+td{
+    border-bottom:none !important;
+    border-top:none !important;
+}
+
+.btn1{
+    width:60px;
+    background-color:#F79421 !important;
+    outline:none !important;
+    color:#FFFFFF !important;
+    border:none !important;
+    padding:10px 35px;
+    border-radius:5px;
+    margin-left:10px;
+}
+
+.btn2{
+    width:140px;
+    background-color:#F79421 !important;
+    outline:none !important;
+    color:#FFFFFF !important;
+    border:none !important;
+    padding:10px 35px;
+    border-radius:5px;
+    margin-left:207px;
+}
+
+#save{
+    float:right;
+}
+
+#myModal label,#myModal2 label,#myModal3 label,#myModal4 label,#myModal5 label,#myModalcertificate label{
+    margin-top:20px !important;
+}
+
+#myModal .submit,#myModal2 .submit,#myModal3 .submit,#myModal4 .submit,#myModal5 .submit,#myModalcertificate .submit{
+    margin-left:200px;
+    margin-top:15px;
+    outline:none !important;
+    background-color:#F79421;
+    border:none !important;
+
+}
+.btn1:focus{
+    box-shadow: 0 0 0 0.25rem #F79421 !important;
+}
+
+.btn1:hover{
+    background-color:#182677 !important;
+}

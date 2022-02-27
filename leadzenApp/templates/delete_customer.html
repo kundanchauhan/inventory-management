@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock%}
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{% load static %}
+<link rel="stylesheet" href="{% static '/assets/css/view_customer.css' %}">
+
+</head>
+{% block body %}
+
+
+<div class="col-md-12">
+   
+    <div class="table table-striped">
+      <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Onboard Date</th>
+                </tr>
+            </thead>
+            {% for i in customer_obj %}
+            <tbody>
+                <tr>
+                    
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.phone_number}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.onboard_date}}</td>
+                </tr>
+             
+            </tbody>
+              
+        </table>
+
+        
+      
+        <form method="post" id="data_validation" action="{% url 'delete_customer' i.id %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="alert alert-danger">
+                <h4>Are you sure, you want to delete ?</h4>
+            </div>
+            <a class="btn btn-primary btn1 " href="{% url 'view_customer' %}">Back</a>
+            <input class="btn btn-primary btn1" id='delete_customer' name='delete_customer' type="submit" value="Delete" >
+        </form>
+        
+    </div>
+    
+</div>
+ {% endfor %}
+
+
+
+
+{% endblock body %}

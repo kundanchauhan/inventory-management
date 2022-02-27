@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock%}
+
+
+{% block body %}
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">
+      ×
+      </button>
+      {{message}}
+    </div>
+ {% endfor %}
+{% endif %}
+
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{% load static %}
+<link rel="stylesheet" href="{% static '/assets/css/view_customer.css' %}">
+
+</head>
+<body>
+
+
+<body>
+  <div class="py-5">
+    <div class="container">
+     <a class="btn btn-success btn-sm ml-2"
+                                href="{% url 'add_inventory' %}">Add Inventory</a>
+      <div class="row hidden-md-up">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Bikes</h4>
+              
+              <p class="card-text p-y-1">Total Number of Bikes:<b> 2</b></p>
+              <p class="card-text p-y-1">Remaning  Bikes: <b>{{remaining_bike}}</b></p>
+              
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Cycle</h4>
+              
+              <p class="card-text p-y-1">Total Number of Cycle: <b>3</b></p>
+              <p class="card-text p-y-1">Remaning  Cycle: <b>{{remaining_cycle}}</b> </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Cars</h4>
+              
+              <p class="card-text p-y-1">Total Number of Cars:<b>1</b></p>
+              <p class="card-text p-y-1">Remaning  Cars: <b>{{remaining_car}}</b></p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Boats</h4>
+              
+              <p class="card-text p-y-1">Total Number of Boats:<b>2</b></p>
+              <p class="card-text p-y-1">Remaning  Boats: <b>{{remaining_boat}}</b></p>
+              
+            </div>
+          </div>
+        </div>
+
+
+
+
+    
+      </div><br>
+      
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+</body>
+
+
+</body>
+
+{% endblock body %}

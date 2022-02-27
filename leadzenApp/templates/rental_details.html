@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock%}
+
+
+{% block body %}
+
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{% load static %}
+<link rel="stylesheet" href="{% static '/assets/css/view_customer.css' %}">
+
+</head>
+<body>
+<div class="container-lg">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row" style="margin-top:5px">
+                    <div class="col-sm-8"><h2>Rental <b>Details</b></h2></div>
+                    
+                </div>
+            </div>
+            <form method="post" id="data_validation"  enctype="multipart/form-data">
+                {% csrf_token %}
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr.No.</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Vehical Type</th>
+                        <th>Vehical Number</th>
+                        <th>Booking Date</th>
+                        
+                       
+                    </tr>
+                </thead>
+                {% for i in booking_obj %}
+                <tbody>
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.name}}</td>
+                          <td>{{i.phone_number}}</td>
+                          <td>{{i.email}}%</td>
+                        <td>{{i.vehical_name}}</td>
+                        <td>{{i.vehical_number}}</td>
+                        
+                        <td>{{i.booking_date|date:'d-m-Y H:i'}}</td>
+                       
+                      
+                    </tr>
+                 
+                </tbody>
+                {% endfor %}
+            </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- model start here -->
+
+
+{% comment %} 
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Customer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="data_validation" action="{%url 'tax_master_add' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Tax Type:</label>
+            <input type="text" id="tax_type" name="tax_type" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Applicable on:</label>
+            <input type="text" id="applicable_on" name="applicable_on"class="form-control" >
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Rate(%):</label>
+            <input type="number" id="rate" name="rate" step="any" class="form-control">
+          </div>
+       
+      
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn1" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary btn2" >Add Tax</button>
+    </form>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>  {% endcomment %}
+
+
+
+<!-- end model -->
+
+
+
+
+
+
+
+
+{% endblock body %}
